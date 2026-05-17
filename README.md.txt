@@ -101,4 +101,11 @@ Research Interests:
 
 ## Recommended Citation
 
-For reproducibility and citation purposes, a DOI can be generated via [Zenodo](https://zenodo.org/) after uploading this GitHub repository.  
+Hasib, A. (2026). Trustworthy AI Recommendation Analysis (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.20257172
+
+## DOI
+
+This repository is archived on Zenodo:
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20257172.svg)](https://doi.org/10.5281/zenodo.20257172) 
+
