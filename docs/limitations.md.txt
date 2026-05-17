@@ -1,0 +1,49 @@
+# Limitations of the AI Recommendation Analysis Workflow
+
+This document summarizes the limitations of the exploratory workflow presented in this repository.
+
+---
+
+## 1. Non-Independence of AI Outputs
+
+- Recommendations from AI systems within the same family may be correlated.  
+- Dependence-aware weighting reduces, but does not fully eliminate, this bias.  
+- Results should be interpreted with this consideration in mind.
+
+---
+
+## 2. Heuristic Weighting and Diversity Bonuses
+
+- Base weights for recommendation categories (`Hit`, `FreshHit`, `Final`, `FreshFinal`) are heuristic.  
+- The diversity bonus is a simple log-based adjustment to reward cross-model support.  
+- These schemes are not formally validated statistical methods.
+
+---
+
+## 3. Small Sample Size
+
+- The dataset of AI-generated recommendations is limited and exploratory.  
+- Quantitative results may not generalize to larger or different AI outputs.
+
+---
+
+## 4. Exploratory Nature
+
+- The workflow is **not intended for formal project selection**.  
+- Outputs demonstrate **reproducible methodology** and **analytical reasoning**, but not authoritative decision-making.
+
+---
+
+## 5. Transparency and Interpretability Emphasis
+
+- All scripts include explicit interpretation and session information.  
+- This emphasizes methodological awareness over predictive accuracy.  
+- Users should treat the results as **illustrative and reproducible exploratory analysis**.
+
+---
+
+## 6. Summary
+
+- This repository demonstrates reproducible, dependence-aware aggregation of heterogeneous AI recommendations.  
+- Limitations are inherent to exploratory computational workflows and heuristic design choices.  
+- Users and reviewers should consider the results as methodological demonstration rather than final decision outputs.

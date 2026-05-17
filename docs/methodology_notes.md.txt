@@ -1,0 +1,57 @@
+# Methodology Notes: Trustworthy AI Recommendation Analysis
+
+## Overview
+
+This document details the methodological framework used in the repository for analyzing heterogeneous AI-generated recommendations.  
+The workflow is exploratory, reproducible, and designed to demonstrate **dependence-aware aggregation** and **interpretability-focused reasoning**.
+
+The scripts in this repository cover three main stages:
+
+1. **Basic Frequency Analysis** (`01_basic_frequency_analysis.R`)  
+   - Simple counts of project recommendations across AI systems  
+   - Provides baseline insight into project popularity
+
+2. **Weighted Borda Aggregation** (`02_weighted_borda_analysis.R`)  
+   - Assigns numeric weights to recommendation categories (`Hit`, `FreshHit`, `Final`, `FreshFinal`)  
+   - Aggregates scores per project  
+   - Normalizes to probabilities and percentages for interpretability
+
+3. **Dependence-Corrected Aggregation with Diversity Bonus** (`03_dependence_corrected_analysis.R`)  
+   - Repeated outputs from the same AI system are discounted using a **diminishing returns penalty**  
+     - CorrectedWeight = BaseWeight / sqrt(repetition_index)  
+   - Projects supported across multiple independent AI systems receive a **diversity bonus**  
+     - DiversityBonus = log(1 + UniqueAIs)  
+   - Produces final scores and probabilities that reflect both confidence and cross-model support
+
+---
+
+## Data and Scripts
+
+- All raw AI recommendations are stored in `data/raw_ai_outputs.csv`.  
+- Scripts are modular and reproducible.  
+- All outputs, including CSV files and plots, are saved in the `outputs/` folder.  
+
+---
+
+## Visualization
+
+- `ggplot2` is used for clear, publication-ready plots.  
+- Plots show frequency, weighted Borda scores, and dependence-corrected scores for easy comparison.  
+- Cross-model support tables summarize which AI systems recommended each project.
+
+---
+
+## Limitations
+
+- AI outputs are **not independent**; dependencies between models are approximated via the diminishing-returns correction.  
+- Weighting schemes and diversity bonuses are **heuristic** and exploratory.  
+- Sample size is small and domain-specific; results are **not formal statistical inference**.  
+- The purpose of the repository is **transparent methodology demonstration** and reproducibility, not definitive project evaluation.
+
+---
+
+## Reproducibility
+
+- Each script contains `sessionInfo()` at the end for reproducibility.  
+- Scripts can be run independently, producing all results automatically.  
+- Workflow designed to be **transparent, interpretable, and reproducible**.
